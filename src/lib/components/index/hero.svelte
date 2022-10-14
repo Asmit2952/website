@@ -1,6 +1,5 @@
 <script lang="ts">
   import LinkButton from "$lib/components/ui-library/link-button";
-  import GithubMark from "../svgs/github-mark.svelte";
   import ButtonsWrapper from "../buttons-wrapper.svelte";
 </script>
 
@@ -99,7 +98,7 @@
       <div>
         <div class="hero__icons">
           <img src="/svg/gitlab.svg" alt="GitLab logo" title="GitLab logo" />
-          <GithubMark alt="GitHub logo" title="GitHub logo" />
+          <img src="/svg/github.svg" alt="GitHub logo" title="GitHub logo" />
           <img
             src="/svg/bitbucket.svg"
             alt="Bitbucket logo"
