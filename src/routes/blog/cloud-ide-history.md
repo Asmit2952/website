@@ -4,6 +4,7 @@ date: Tuesday, 20 Oct 2021 13:00:00 UTC
 excerpt: Background story about the last four years improving the editing experience of Cloud IDEs.
 image: cover_cloudIDE.jpg
 slug: cloud-ide-history
+tags: ["Company building"]
 subtitle:
 teaserImage: cover_cloudIDE.jpg
 title: From Theia to OpenVSCode Server - A history of Cloud IDEs

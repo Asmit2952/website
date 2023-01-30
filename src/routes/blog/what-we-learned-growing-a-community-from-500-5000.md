@@ -5,6 +5,7 @@ excerpt: Learn about our ongoing journey of building and scaling our community a
 slug: what-we-learned-growing-a-community-from-500-5000
 teaserImage: teaser.png
 image: teaser.png
+tags: ["Company building"]
 title: What we learned growing a community from 500 to 5000
 ---
 

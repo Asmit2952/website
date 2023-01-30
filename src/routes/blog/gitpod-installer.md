@@ -4,6 +4,7 @@ date: Wed, 6 April 2022 16:00:00 UTC
 excerpt: We at Gitpod believe in making developer experiences better, and we are super excited to introduce Gitpod Installer 🎉, which makes Gitpod installations a breeze!
 image: teaser.png
 slug: gitpod-installer
+tags: ["Engineering", "Gitpod updates"]
 subtitle:
 teaserImage: teaser.png
 title: Why we moved from Helm to Gitpod Installer

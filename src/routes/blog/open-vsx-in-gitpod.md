@@ -6,6 +6,7 @@ image: teaser.jpg
 slug: open-vsx-in-gitpod
 subtitle: Open VSX is now integrated in Gitpod
 teaserImage: teaser.jpg
+tags: ["Gitpod updates"]
 title: Search & Install Extensions in Your Gitpod Workspace
 ---
 

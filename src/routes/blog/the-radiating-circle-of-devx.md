@@ -7,6 +7,7 @@ slug: the-radiating-circle-of-devx
 subtitle:
 teaserImage: teaser.jpg
 title: DevX Digest 08 - The Radiating Circle of DevX
+tags: ["Developer experience"]
 type: digest
 ---
 

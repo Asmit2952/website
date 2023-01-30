@@ -5,6 +5,7 @@ excerpt: Tailscale and Gitpod partner to enable secure and professional software
 image: header.jpg
 slug: tailscale
 subtitle:
+tags: ["Gitpod updates"]
 teaserImage: header.jpg
 title: Tailscale x Gitpod
 ---

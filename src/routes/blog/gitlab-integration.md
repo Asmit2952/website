@@ -4,6 +4,7 @@ date: Thu, 06 Oct 2020 14:00:00 UTC
 excerpt: Today, we are super excited to share that we’ve partnered with GitLab and built a native Gitpod integration in GitLab’s UI.
 image: teaser.jpg
 slug: gitlab-integration
+tags: ["Company building"]
 subtitle: Launch Gitpod workspace from GitLab
 title: Native GitLab Integration
 ---

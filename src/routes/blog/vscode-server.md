@@ -6,6 +6,7 @@ image: vscodeserver.jpg
 slug: vscode-server
 subtitle:
 teaserImage: vscodeserver.jpg
+tags: ["Gitpod updates"]
 title: Thanks Microsoft for open-sourcing VS Code Server 👐
 ---
 

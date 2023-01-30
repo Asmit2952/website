@@ -6,6 +6,7 @@ image: teaser.jpg
 slug: teams-and-projects
 subtitle: Introducing Teams and Projects
 teaserImage: teaser.jpg
+tags: ["Gitpod updates"]
 title: Introducing Teams & Projects
 ---
 

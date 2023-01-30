@@ -18,6 +18,7 @@ Usage:
   gp [command]
 
 Available Commands:
+  docs                Open Gitpod Documentation in default browser
   env                 Controls user-defined, persistent environment variables.
   help                Help about any command
   info                Display workspace info, such as its ID, class, etc.
@@ -25,6 +26,7 @@ Available Commands:
   open                Opens a file in Gitpod
   ports               Interact with workspace ports.
   preview             Opens a URL in the IDE's preview
+  rebuild             Re-builds the workspace image (useful to debug a workspace custom image)
   snapshot            Take a snapshot of the current workspace
   stop                Stop current workspace
   sync-await          Awaits an event triggered using gp sync-done
@@ -156,6 +158,8 @@ Returns a table-formatted list of tasks, their name, state and the ID of the ter
 gp tasks list
 ```
 
+Use `gp tasks list --no-color` to disable colors for the output. It also respects the [`NO_COLOR`](https://no-color.org/) & `GP_NO_COLOR` environment variable.
+
 ### attach
 
 Creates a connection from a user terminal to a given workspace's task terminal. The session is interactive. Once attached, both stdin and stdout are streamed between the user and the remote terminal. Allowing the user to run commands directly in the task terminal.
@@ -199,21 +203,30 @@ gp tasks stop --all
 Interact with workspace timeout configuration. You can learn more in [Life of a Workspace](/docs/introduction/learn-gitpod/the-life-of-a-workspace#timeouts).
 
 ```sh
-gp timeout
+gp timeout show
 ```
-
-### extend
-
-Extends the current workspace's timeout.
 
 > **Note:** You can only have one workspace with extended timeout at a time.
 
-The default timeout, and the ability to extend a workspace timeout depends on your [plan](https://gitpod.io/plans) or [team plan](https://gitpod.io/teams).
+The default timeout, and the ability to extend a workspace timeout depends on your [billing configuration](/docs/configure/billing).
 
-Example of how to extend the current workspace timeout:
+### set
+
+Sets the current workspace's timeout to the given value. The value must be a positive integer followed by a unit of time. The unit of time can be one of `s`, `m`, `h` for seconds, minutes, hours respectively. The maximum workspace timeout is 24 hours.
+
+<!--
+Technically, Following ones are also valid:
+
+* `gp timeout set 300s`
+* `gp timeout set 300m`
+* `gp timeout set 24h`
+
+=> But Let's use minutes for public interaction as it's the most common use case.
+
+-->
 
 ```sh
-gp timeout extend
+gp timeout set 300m
 ```
 
 ### show
@@ -224,15 +237,23 @@ Shows the current workspace's timeout.
 gp timeout show
 ```
 
+### extend
+
+Extends the current workspace's timeout to 180 minutes. Note, It will set your workspace's timeout to 180 minutes if it's less or even more than 180 minutes.
+
+```sh
+gp timeout extend
+```
+
 ## info
 
-Displays information about the current workspace, such as its ID, workspace class, and URL.
+Displays information about the current [workspace](/docs/configure/workspaces) (such as the workspace ID and URL) and also the [workspace class](/docs/configure/workspaces/workspace-classes).
 
 ```sh
 gp info
 ```
 
-You can also use `gp info --json` to get the output in JSON format.
+Use `gp info --json` to get the output in JSON format for programmatic use in (e.g. in shell scripts).
 
 ## ports
 
@@ -245,6 +266,8 @@ Outputs a table-formatted list of ports along with their status, URL, name and d
 ```sh
 gp ports list
 ```
+
+Use `gp ports list --no-color` to disable colors for the output. It also respects the [`NO_COLOR`](https://no-color.org/) & `GP_NO_COLOR` environment variable.
 
 ### expose
 
@@ -291,4 +314,22 @@ Displays the current workspace's class info along with the used and available CP
 gp top
 ```
 
-You can also use `gp top --json` to get output in JSON format if you want to access them.
+- Use `gp top --json` to get the output in JSON format for programmatic use in (e.g. in shell scripts).
+
+- Use `gp top --no-color` to disable colors for the output. It also respects the [`NO_COLOR`](https://no-color.org/) & `GP_NO_COLOR` environment variable.
+
+## docs
+
+Opens the Gitpod documentation in a new browser tab.
+
+```sh
+gp docs
+```
+
+## rebuild
+
+Re-builds the workspace image, it's useful to validate and debug your [custom Workspace image](/docs/configure/workspaces/workspace-image#custom-base-image).
+
+```sh
+gp rebuild
+```

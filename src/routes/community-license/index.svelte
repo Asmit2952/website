@@ -4,6 +4,7 @@
 
 <script lang="ts">
   import type { Form } from "$lib/types/form";
+  import validator from "validator";
   import OpenGraph from "$lib/components/open-graph.svelte";
   import Textarea from "$lib/components/ui-library/textarea";
   import Input from "$lib/components/ui-library/input";
@@ -85,28 +86,21 @@
 
     isSubmissionInProgress = true;
 
-    trackIdentity(
-      {
-        name_untrusted: formData.name.value,
-        email_untrusted: formData.email.value,
-      },
-      true
-    );
+    await trackIdentity({
+      name_untrusted: formData.name.value,
+      email_untrusted: formData.email.value,
+    });
 
-    trackEvent(
-      "message_submitted",
-      {
-        full_name: formData.name.value,
-        email: formData.email.value,
-        company: formData.company.value,
-        company_engineers: formData.noOfEngineers.value,
-        infrastructure: formData.cloudInfrastructure.value,
-        message: formData.message.value,
-        attribution: formData.referrer.value,
-        referrer: formData.referrer.value,
-      },
-      true
-    );
+    await trackEvent("message_submitted", {
+      full_name: formData.name.value,
+      email: formData.email.value,
+      company: formData.company.value,
+      company_engineers: formData.noOfEngineers.value,
+      infrastructure: formData.cloudInfrastructure.value,
+      message: formData.message.value,
+      attribution: formData.referrer.value,
+      referrer: formData.referrer.value,
+    });
 
     const email: Email = {
       toType: "community-license",
@@ -169,10 +163,18 @@
   <div slot="content" bind:this={sectionStart}>
     <h1 class="h2">Receive the free community license via&nbsp;email</h1>
     <p>
-      Fill out the form and immediately receive the free self-hosted community
-      license via email. If you require support for air gapped environments,
-      please request an <a href="/enterprise-license">enterprise license</a> to get
-      a free trial.
+      <b>Self-hosted as a product is no longer supported</b> <br /> The last
+      official update of this product is the
+      <a href="https://www.gitpod.io/changelog/november-self-hosted-release"
+        >November 2022 self-hosted release</a
+      >. However, we no longer offer support or updates for it. You can still
+      request our free community license below, but we no longer sell commercial
+      self-hosted licenses. If you are interested in an isolated, private
+      installation of Gitpod, take a look at
+      <a href="https://www.gitpod.io/dedicated">Gitpod Dedicated</a>. Read
+      <a href="/blog/introducing-gitpod-dedicated"
+        >our blog on Gitpod Dedicated</a
+      > to learn why we made the decision to discontinue self-hosted.
     </p>
   </div>
 </Header>
@@ -225,14 +227,15 @@
         <div>
           <Input
             hasError={isFormDirty && !formData.company.valid}
-            label="Company*"
+            label="Company website*"
             name="company"
             id="company"
             bind:value={formData.company.value}
             bind:element={formData.company.el}
             on:change={() => {
               formData.company.valid =
-                formData.company.value && formData.company.el.checkValidity();
+                validator.isURL(formData.company.value) &&
+                formData.company.el.checkValidity();
             }}
             type="text"
             autocomplete="organization"

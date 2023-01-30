@@ -6,6 +6,7 @@ image: compiling-xkcd.png
 slug: prebuilds
 subtitle: Prebuild your workspaces
 title: Waiting for code to build is like watching paint dry
+tags: ["Gitpod updates"]
 url: https://medium.com/@csweichel/a1c6b25fd601
 ---
 

@@ -5,6 +5,7 @@ excerpt: Since we released Gitpod into Public Beta it has been incredibly exciti
 image: docker-in-gitpod.jpeg
 slug: docker-in-gitpod
 title: Bring your own (Docker) image to Gitpod
+tags: ["Gitpod updates"]
 url: https://medium.com/gitpod/bring-your-own-docker-image-to-gitpod-52db1aa861de
 ---
 

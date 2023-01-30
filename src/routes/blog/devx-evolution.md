@@ -7,6 +7,7 @@ slug: devx-evolution
 subtitle:
 teaserImage: header.jpg
 title: DevX Digest 05 - How DevX has evolved
+tags: ["Developer experience"]
 type: digest
 ---
 

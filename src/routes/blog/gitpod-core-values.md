@@ -4,6 +4,7 @@ date: Wed, 1 June 2022 16:00:00 UTC
 excerpt: Core values define who we are. They are an authentic representation of where we are coming from and a guiding compass on where we are going.
 image: teaser-mobile.jpg
 slug: gitpod-core-values
+tags: ["Company building"]
 subtitle:
 teaserImage: teaser.jpg
 title: Our Core Values

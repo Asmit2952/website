@@ -6,6 +6,7 @@ image: teaser.jpg
 slug: launching-devx-community
 subtitle:
 teaserImage: teaser.jpg
+tags: ["Developer experience"]
 title: Launching DevX Community
 ---
 

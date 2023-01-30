@@ -6,6 +6,7 @@ image: devops.jpg
 slug: continuous-dev-environment-in-devops
 subtitle: The Missing Piece in DevOps?
 teaserImage: devops.jpg
+tags: ["Gitpod updates"]
 title: Continuous Dev Environments
 ---
 

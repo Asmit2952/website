@@ -6,6 +6,7 @@ image: teaser.jpg
 slug: opensource
 subtitle:
 teaserImage: teaser.jpg
+tags: ["Company building"]
 title: Gitpod is now Open Source 🎉
 ---
 

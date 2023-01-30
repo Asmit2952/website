@@ -4,6 +4,7 @@ date: Thu Nov 13 2019 09:00:00 GMT+0000 (UTC)
 excerpt: Some things just aren't exposed to the internet. Either because we do not want them out in the open, think some on-prem database, or because
 image: local-services.jpg
 slug: local-services-in-gitpod
+tags: ["Engineering"]
 teaserImage: local-services.jpg
 title: Using local services in Gitpod
 ---

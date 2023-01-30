@@ -6,6 +6,7 @@ image: gitpod-tabnine.png
 slug: tabnine
 subtitle:
 teaserImage: gitpod-tabnine.png
+tags: ["Gitpod updates"]
 title: Match made in automation heaven
 ---
 

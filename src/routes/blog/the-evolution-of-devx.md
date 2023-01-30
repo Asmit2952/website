@@ -7,6 +7,7 @@ slug: the-evolution-of-devx
 subtitle:
 teaserImage: evolution-of-devx.jpg
 title: DevX Digest 01 - The evolution of DevX 🌱
+tags: ["Developer experience"]
 type: digest
 ---
 

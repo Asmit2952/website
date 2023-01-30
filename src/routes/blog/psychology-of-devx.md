@@ -7,6 +7,7 @@ slug: psychology-of-devx
 subtitle:
 teaserImage: teaser.png
 title: DevX Digest 03 - The Psychology of Developer Experience
+tags: ["Developer experience"]
 type: digest
 ---
 

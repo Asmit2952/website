@@ -5,6 +5,7 @@ excerpt: Gitpod takes a central position in the software development lifecycle. 
 image: teaser.png
 slug: securing-the-software-supply-chain-at-gitpod-with-slsa
 teaserImage: teaser.png
+tags: ["Gitpod updates"]
 title: Securing Gitpod's Software Supply Chain with SLSA
 ---
 

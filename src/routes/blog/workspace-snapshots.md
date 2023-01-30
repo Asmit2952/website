@@ -6,6 +6,7 @@ image: workspace-snapshots.jpeg
 slug: workspace-snapshots
 subtitle: Code never lies
 title: Creating reproducibles for any programming language
+tags: ["Gitpod updates"]
 url: https://medium.com/gitpod/code-never-lies-creating-reproducibles-for-any-programming-language-7946021a68f2
 ---
 

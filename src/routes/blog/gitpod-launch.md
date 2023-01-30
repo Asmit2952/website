@@ -6,6 +6,7 @@ image: teaser-launch-min.jpg
 slug: gitpod-launch
 subtitle: No Setup, Less Waiting, More Flow
 teaserImage: teaser-launch-min.jpg
+tags: ["Gitpod updates"]
 title: Introducing Gitpod — Frictionless Coding on GitHub
 ---
 
@@ -102,8 +103,6 @@ We think we have found a good balance by providing the following individual subs
 _(I know some of you are lucky enough to do professional open-source. Decide what works best for you in that case ;-))_
 
 We also offer **team subscriptions**, which allow managers to buy a batch of seats and assign them to the team.
-
-And, of course, a special **students discount** is in store, eligible if your primary GitHub URL belongs to an educational institution.
 
 ## Thank You ❤️
 

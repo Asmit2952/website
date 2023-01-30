@@ -50,9 +50,7 @@
    */
   export let showAvatar = true;
 
-  const trimmedUsernames = usernames
-    .split(",")
-    .map((username) => username.trim());
+  $: trimmedUsernames = usernames.split(",").map((username) => username.trim());
 
   const getSocialMediaLink = (username: string) =>
     socialMediaLinks

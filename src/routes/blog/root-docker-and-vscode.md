@@ -6,6 +6,7 @@ image: teaser.jpg
 slug: root-docker-and-vscode
 subtitle: New Release
 teaserImage: teaser.jpg
+tags: ["Gitpod updates"]
 title: Root, Docker and VS Code
 ---
 

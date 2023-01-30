@@ -4,6 +4,7 @@ date: Thursday, 16 Dec 2021 11:00:00 UTC
 excerpt: Gitpod workspaces are Kubernetes pods. Each Kubernetes pod maintains its own network namespace - similar to how a regular container would. We use a combination of user and network namespaces to enable features you wouldn't find in a normal Kubernetes pod.
 image: teaser.png
 slug: workspace-networking
+tags: ["Engineering"]
 subtitle: or how we enabled Tailscale
 teaserImage: teaser.png
 title: Gitpod Workspace Networking

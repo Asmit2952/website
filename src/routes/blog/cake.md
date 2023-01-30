@@ -4,6 +4,7 @@ date: Friday, 3 September 2021 09:00:00 UTC
 excerpt: This is a story about a cake. Following a long-standing tradition in technology, we decided to send an edible Gitpod workspace to GitHub's San Francisco office.
 image: teaser.jpg
 slug: cake
+tags: ["Company building"]
 subtitle:
 teaserImage: teaser.jpg
 title: Gitpod shipped GitHub a launch cake for Codespaces
@@ -93,7 +94,7 @@ Truth be told, I was 🤬 'ing myself. To trust someone in a completely differen
 
 ![Credit: Gitpod](../../../static/images/blog/cake/the-vote.jpg)
 
-Whilst Gitpod is a fully distributed company, that [hires people from anywhere in the world](https://www.gitpod.io/careers/careers) our origins are from Kiel, Germany thus a lot of our employees are German. After an unfair vote, German Chocolate was declared the winner, but it wasn't without some office debate as to _what German Chocolate tastes like_:
+Whilst Gitpod is a fully distributed company, that [hires people from anywhere in the world](/careers) our origins are from Kiel, Germany thus a lot of our employees are German. After an unfair vote, German Chocolate was declared the winner, but it wasn't without some office debate as to _what German Chocolate tastes like_:
 
 - 🧔 "German Chocolate"? I only know of Swiss Chocolate.
 - 👩🏼 There are "German Chocolate" and "True Chocolate". It seems that they are implying something…

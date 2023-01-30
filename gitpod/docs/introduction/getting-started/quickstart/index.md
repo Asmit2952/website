@@ -17,7 +17,7 @@ title: Quickstart
 data={{
     description:
       "Learn how to start using Gitpod on an example project/template that is hosted on GitHub in less than 5 minutes. Get up and running with Gitpod quickly.",
-    title: "Quickstart -Gitpod",
+    title: "Quickstart - Gitpod",
     keywords: "template, get started, example",
   }}
 />
@@ -35,6 +35,10 @@ Learn how to start using Gitpod on an example project that is hosted on GitHub i
 ### Find your template
 
 <QuickstartSearch />
+
+<br>
+
+💡 Find more such templates on [Gitpod Samples](https://github.com/gitpod-samples)
 
 ## Installing the Gitpod browser extension
 

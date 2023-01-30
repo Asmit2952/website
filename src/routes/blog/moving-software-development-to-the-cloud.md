@@ -5,6 +5,7 @@ excerpt: Fully automated developer environments will be the standard for profess
 image: teaser.jpg
 slug: moving-software-development-to-the-cloud
 subtitle: Gitpod & GitHub Codespaces
+tags: ["Company building"]
 teaserImage: teaser.jpg
 title: Moving software development to the cloud ☁️
 ---

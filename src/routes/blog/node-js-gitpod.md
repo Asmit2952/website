@@ -5,6 +5,7 @@ excerpt: Gitpod is based on the open-source Theia IDE Framework, which is highly
 image: node-js-gitpod.png
 slug: node-js-gitpod
 title: Debugging Node.js applications in Theia
+tags: ["Engineering"]
 url: https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1
 ---
 

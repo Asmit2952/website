@@ -7,6 +7,7 @@ slug: ephemeral-dev-envs
 subtitle:
 teaserImage: teaser.jpg
 title: DevX Digest 02 - The rise of ephemeral developer environments ✨
+tags: ["Developer experience"]
 type: digest
 ---
 

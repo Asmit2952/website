@@ -6,6 +6,7 @@ image: teaser.png
 slug: from-gatsby-to-svelte
 subtitle:
 teaserImage: teaser.png
+tags: ["Engineering"]
 title: From Gatsby to Svelte in 3 weeks
 ---
 

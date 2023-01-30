@@ -6,6 +6,7 @@ image: teaser-brew.png
 slug: brew
 subtitle: "'brew install anything' in Gitpod"
 teaserImage: teaser-brew.png
+tags: ["Engineering", "Gitpod updates"]
 title: Gitpod ❤️ Homebrew
 ---
 

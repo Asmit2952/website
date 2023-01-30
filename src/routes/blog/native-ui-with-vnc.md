@@ -5,6 +5,7 @@ excerpt: Gitpod is a web-based IDE. As such one would think it only works for we
 image: virtual-x-sever-running-on-a-remote-desktop-client.png
 slug: native-ui-with-vnc
 subtitle: Cloud IDEs aren't limited to web apps
+tags: ["Engineering"]
 title: Developing native UI applications in Gitpod
 url: https://medium.com/gitpod/developing-native-ui-applications-in-gitpod-15af2967c24e
 ---

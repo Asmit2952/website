@@ -6,6 +6,7 @@ image: teaser.png
 slug: devxconf-2022-wrap
 subtitle: All twenty seven talks from the conference are now available on YouTube.
 teaserImage: teaser.png
+tags: ["Company building"]
 title: Gitpod raises $22,600 at DevX Conf to give to Open-source maintainers
 ---
 

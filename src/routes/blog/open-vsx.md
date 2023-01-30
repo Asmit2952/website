@@ -5,6 +5,7 @@ excerpt: VS Code is used by more than 50% of all developers worldwide. Its exten
 image: open.jpg
 slug: open-vsx
 subtitle: A Free Marketplace for VS Code extensions
+tags: ["Gitpod updates"]
 teaserImage: open.jpg
 title: Open VSX
 ---

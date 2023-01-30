@@ -7,6 +7,7 @@ slug: devrel-link-devx
 subtitle:
 teaserImage: teaser.jpg
 title: DevX Digest 07 -  Is DevX the new DevRel?
+tags: ["Developer experience"]
 type: digest
 ---
 

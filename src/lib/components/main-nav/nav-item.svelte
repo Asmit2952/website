@@ -35,11 +35,11 @@
     {href}
     on:click
     sveltekit:prefetch={isPrefecthable}
-    class="text-important sm:text-body text-p-large hover:text-important focus:text-important active:text-important"
+    class="sm:text-body text-p-large hover:text-important focus:text-important active:text-important"
   >
     {label}
     {#if highlight}
-      <img src="/indicator.svg" alt="" class="h-1.5 w-1.5" />
+      <img src="/indicator.svg" alt="highlight indicator" class="h-1.5 w-1.5" />
     {/if}
   </a>
 </li>

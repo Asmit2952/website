@@ -44,18 +44,13 @@ export const MENU: MenuEntry[] = [
   M("Configure", "configure", true),
 
   M("Workspaces", "configure/workspaces", false, [
+    M("Workspace Lifecycle", "configure/workspaces/workspace-lifecycle"),
     M("Workspace Image", "configure/workspaces/workspace-image"),
     M("Tasks", "configure/workspaces/tasks"),
     M("Ports", "configure/workspaces/ports"),
     M("Collaboration", "configure/workspaces/collaboration", false, []),
     M("Multi-repo", "configure/workspaces/multi-repo", false, [], "beta"),
-    M(
-      "Workspace classes",
-      "configure/workspaces/workspace-classes",
-      false,
-      [],
-      "Early Access"
-    ),
+    M("Workspace classes", "configure/workspaces/workspace-classes"),
   ]),
 
   M("User settings", "configure/user-settings", false, [
@@ -64,21 +59,30 @@ export const MENU: MenuEntry[] = [
     M("Browser bookmarklet", "configure/user-settings/browser-bookmarklet"),
     M("Dotfiles", "configure/user-settings/dotfiles", false, []),
     M("SSH", "configure/user-settings/ssh"),
+    // M(
+    //   "Access Tokens",
+    //   "configure/user-settings/access-tokens",
+    //   false,
+    //   [],
+    //   "beta"
+    // ),
   ]),
 
-  M(
-    "Projects",
-    "configure/projects",
-    false,
-    [
-      // Why is this side bar name different to the title / URL?
-      M("Prebuilds", "configure/projects/prebuilds"),
-      M("Environment Variables", "configure/projects/environment-variables"),
-    ],
-    "beta"
-  ),
+  M("Projects", "configure/projects", false, [
+    // Why is this side bar name different to the title / URL?
+    M("Prebuilds", "configure/projects/prebuilds"),
+    M("Incremental Prebuilds", "configure/projects/incremental-prebuilds"),
+    M(
+      "Last Successful Prebuild",
+      "configure/projects/last-successful-prebuild",
+      false,
+      [],
+      "alpha"
+    ),
+    M("Environment Variables", "configure/projects/environment-variables"),
+  ]),
 
-  M("Teams", "configure/teams", false, [], "beta"),
+  M("Teams", "configure/teams"),
 
   M("Authentication", "configure/authentication", false, [
     M("GitLab", "configure/authentication/gitlab"),
@@ -178,31 +182,14 @@ export const MENU: MenuEntry[] = [
       M("Upgrade Guides", "configure/self-hosted/latest/upgrade-guides"),
     ]),
   ]),
-  M("Billing", "configure/billing", false, [
-    // M("Subscriptions", "configure/billing/subscriptions"),
-    M("Personal plans", "configure/billing/personal-plans"),
-    M("Team plans", "configure/billing/team-plans"),
-    M("Team billing", "configure/billing/team-billing", false, [], "beta"),
-    M(
-      "Usage-based billing",
-      "configure/billing/usage-based-billing",
-      false,
-      [],
-      "Early Access"
-    ),
-  ]),
+  M("Billing", "configure/billing"),
 
   M("References", "references", true),
   M(".gitpod.yml", "references/gitpod-yml"),
+  // M("Gitpod public API", "references/gitpod-public-api", false, [], "alpha"),
   M("IDEs & editors", "references/ides-and-editors", false, [
     M("VS Code Browser", "references/ides-and-editors/vscode-browser"),
-    M(
-      "VS Code Desktop",
-      "references/ides-and-editors/vscode",
-      false,
-      [],
-      "beta"
-    ),
+    M("VS Code Desktop", "references/ides-and-editors/vscode"),
     M(
       "IntelliJ IDEA",
       "references/ides-and-editors/intellij",
@@ -213,8 +200,8 @@ export const MENU: MenuEntry[] = [
     M("GoLand", "references/ides-and-editors/goland", false, [], "beta"),
     M("PhpStorm", "references/ides-and-editors/phpstorm", false, [], "beta"),
     M("PyCharm", "references/ides-and-editors/pycharm", false, [], "beta"),
-    M("CLion", "references/ides-and-editors/clion", false, [], "soon"),
-    M("Rider", "references/ides-and-editors/rider", false, [], "soon"),
+    M("CLion", "references/ides-and-editors/clion", false, [], "beta"),
+    M("Rider", "references/ides-and-editors/rider", false, [], "beta"),
     M("RubyMine", "references/ides-and-editors/rubymine", false, [], "beta"),
     M("WebStorm", "references/ides-and-editors/webstorm", false, [], "beta"),
     M(
@@ -240,6 +227,7 @@ export const MENU: MenuEntry[] = [
   ]),
   M("Gitpod CLI", "references/gitpod-cli"),
   M("Compatibility", "references/compatibility?user"),
+  M("Security FAQ", "references/security/faq"),
   // M("Custom Docker image", "references/gitpod-dockerfile"),
   // M("Architecture", "references/architecture"),
   M("Help", "help", true),

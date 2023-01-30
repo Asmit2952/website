@@ -5,6 +5,7 @@
 <script lang="ts">
   import type { Form } from "$lib/types/form";
   import type { Email } from "$lib/api/api";
+  import validator from "validator";
   import OpenGraph from "$lib/components/open-graph.svelte";
   import SubmissionSuccess from "$lib/components/submission-success.svelte";
   import { onMount, tick } from "svelte";
@@ -17,28 +18,38 @@
   import Button from "$lib/components/ui-library/button";
   import Card from "$lib/components/ui-library/card";
   import { scrollToElement } from "$lib/utils/helpers";
+  import { page } from "$app/stores";
   import {
-    cloudPlatforms,
+    dedicatedCloudPlatforms,
     noOfEngineers as noOfEngineersArray,
   } from "$lib/contents/contact";
   import Select from "$lib/components/ui-library/select/select.svelte";
   import InputsHalf from "$lib/components/contact/inputs-half.svelte";
 
-  const studentUnlimitedSubject = "Educational Discount Verification";
-
-  const selfHostingSubject = "Self-hosting Gitpod";
+  const enterpriseSubject = "Enterprise";
 
   const otherSubject = "Other";
   const subjects = [
     "Question",
     "Technical Support",
     "Billing",
-    studentUnlimitedSubject,
-    selfHostingSubject,
+    enterpriseSubject,
     "Open Source Sponsorship",
     "Security",
     otherSubject,
   ];
+
+  onMount(() => {
+    const subject = $page.url.searchParams.get("subject");
+    const match = subjects.find(
+      (s) => s.toLowerCase() === subject?.toLowerCase()
+    );
+
+    if (match) {
+      formData.selectedSubject.value = match;
+      formData.selectedSubject.valid = true;
+    }
+  });
 
   let isCloudPlatformsSelectShown = false;
 
@@ -60,15 +71,8 @@
     value: "",
   };
 
-  let isStudentEmailNoteShown: boolean = false;
   let sectionStart: HTMLElement;
   let isSubmissionInProgress: boolean = false;
-
-  $: if (formData.selectedSubject.value === studentUnlimitedSubject) {
-    isStudentEmailNoteShown = true;
-  } else {
-    isStudentEmailNoteShown = false;
-  }
 
   const formData: Form = {
     consent: {
@@ -98,7 +102,7 @@
     },
   };
 
-  $: if (formData.selectedSubject.value == selfHostingSubject) {
+  $: if (formData.selectedSubject.value == enterpriseSubject) {
     isCloudPlatformsSelectShown = true;
     formData.cloudInfrastructure = cloudInfrastructure;
     formData.noOfEngineers = noOfEngineers;
@@ -127,36 +131,29 @@
     }
     isSubmissionInProgress = true;
 
-    trackIdentity(
-      {
-        name_untrusted: formData.name.value,
-        email_untrusted: formData.email.value,
-      },
-      true
-    );
+    await trackIdentity({
+      name_untrusted: formData.name.value,
+      email_untrusted: formData.email.value,
+    });
 
-    trackEvent(
-      "message_submitted",
-      {
-        subject: formData.selectedSubject.value,
-        full_name: formData.name.value,
-        email: formData.email.value,
-        infrastructure:
-          formData.selectedSubject.value == selfHostingSubject
-            ? formData.cloudInfrastructure.value
-            : undefined,
-        company_engineers:
-          formData.selectedSubject.value == selfHostingSubject
-            ? formData.noOfEngineers.value
-            : undefined,
-        company:
-          formData.selectedSubject.value == selfHostingSubject
-            ? formData.company.value
-            : undefined,
-        message: formData.message.value,
-      },
-      true
-    );
+    await trackEvent("message_submitted", {
+      subject: formData.selectedSubject.value,
+      full_name: formData.name.value,
+      email: formData.email.value,
+      infrastructure:
+        formData.selectedSubject.value == enterpriseSubject
+          ? formData.cloudInfrastructure.value
+          : undefined,
+      company_engineers:
+        formData.selectedSubject.value == enterpriseSubject
+          ? formData.noOfEngineers.value
+          : undefined,
+      company:
+        formData.selectedSubject.value == enterpriseSubject
+          ? formData.company.value
+          : undefined,
+      message: formData.message.value,
+    });
 
     const email: Email = {
       replyTo: {
@@ -205,20 +202,13 @@
       console.error(error);
     }
   };
-
-  onMount(() => {
-    if (window.location.search.includes("open-source-sponsorship")) {
-      formData.selectedSubject.value = "Open Source Sponsorship";
-      formData.selectedSubject.valid = true;
-    }
-  });
 </script>
 
 <OpenGraph
   data={{
     description:
       "Do you need help with any question or issue? Please get in contact with us and we’ll get onto it right away.",
-    title: "Contact Support",
+    title: "Contact Support - Need help with any question or issue?",
   }}
 />
 
@@ -295,14 +285,7 @@
                 />
               </div>
               <div class:error={isFormDirty && !formData.email.valid}>
-                <label class="cursor-pointer" for="email"
-                  >E-mail*
-                  {#if isStudentEmailNoteShown}
-                    <span class="fine-print"
-                      >(Please use your student or faculty email)</span
-                    >
-                  {/if}
-                </label>
+                <label class="cursor-pointer" for="email">E-mail* </label>
                 <Input
                   hasError={isFormDirty && !formData.email.valid}
                   id="email"
@@ -334,7 +317,7 @@
                         // @ts-ignore
                         e.target.validity.valid;
                     }}
-                    options={cloudPlatforms}
+                    options={dedicatedCloudPlatforms}
                     placeholder="Which cloud infrastructure do you use?"
                     class="max-w-md"
                   />
@@ -361,7 +344,7 @@
               <InputsHalf>
                 <div class:error={isFormDirty && !formData.company.valid}>
                   <Input
-                    label="Company*"
+                    label="Company website*"
                     hasError={isFormDirty && !formData.company.valid}
                     id="company"
                     name="company"
@@ -369,7 +352,7 @@
                     bind:element={formData.company.el}
                     on:change={() => {
                       formData.company.valid =
-                        formData.company.value &&
+                        validator.isURL(formData.company.value) &&
                         formData.company.el.checkValidity();
                     }}
                     type="text"
@@ -381,7 +364,7 @@
             <div>
               <Textarea
                 id="message"
-                label="Your message*"
+                label="How can we help you?*"
                 name="message"
                 hasError={isFormDirty && !formData.message.valid}
                 bind:value={formData.message.value}

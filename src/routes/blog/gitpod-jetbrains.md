@@ -2,7 +2,7 @@
 author: JohannesLandgraf, akosyakov, loujaybee
 date: Thursday, 28 April 2022 11:00:00 UTC
 excerpt: Gitpod and JetBrains announce partnership and deep product integration to bring remote development to developers around the world
-
+tags: ["Company building"]
 slug: gitpod-jetbrains
 teaserImage: teaser.jpg
 image: teaser.jpg

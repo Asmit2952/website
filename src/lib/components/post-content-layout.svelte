@@ -10,9 +10,8 @@
 
   export let baseUrl: string;
   export let imagesDirectoryName: string;
-  export let type: string = "";
 
-  const { date, author, slug, title, image, teaserImage, excerpt } =
+  const { date, author, slug, title, image, teaserImage, excerpt, tags } =
     $$restProps;
 
   let dateDisplay = new Date(Date.parse(date)).toLocaleDateString(undefined, {
@@ -58,7 +57,7 @@
       trackingName: "twitter",
     },
     {
-      href: `http://www.reddit.com/submit?url=${encodeURIComponent(
+      href: `https://www.reddit.com/submit?url=${encodeURIComponent(
         `${baseUrl}${slug}&title=${title}`
       )}`,
       icon: {
@@ -69,7 +68,7 @@
     },
     {
       name: "HackerNews",
-      href: `http://news.ycombinator.com/submitlink?u=${encodeURIComponent(
+      href: `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(
         `${baseUrl}${slug}`
       )}&t=${encodeURIComponent(title)}`,
       icon: {
@@ -81,7 +80,7 @@
   ];
 </script>
 
-<style>
+<style lang="postcss">
   .prose :global(nav.toc) {
     @apply hidden;
   }
@@ -110,9 +109,26 @@
     <div
       class="content-blog prose prose-img:rounded-tl-2xl prose-img:rounded-tr-[1.3rem] max-w-none mt-xx-small"
     >
-      <p class="mt-[1.875rem] mb-6 text-body">{dateDisplay}</p>
-      {#if type === "digest"}
+      <p
+        class="{tags && tags.length > 0
+          ? '!mb-macro'
+          : '!mb-macro'} mt-[1.875rem] text-body"
+      >
+        {dateDisplay}
+      </p>
+      <!-- {#if type === "digest"}
         <Pill text="DevX Digest" class="mb-micro" />
+      {/if} -->
+      {#if tags && tags.length > 0}
+        <div class="flex mb-macro items-center gap-macro">
+          {#each tags as tag}
+            <a
+              sveltekit:prefetch
+              href="/blog?{new URLSearchParams({ tag }).toString()}"
+              ><Pill variant="gray" text={tag} /></a
+            >
+          {/each}
+        </div>
       {/if}
       <h1>{title}</h1>
       <p>

@@ -7,6 +7,7 @@ slug: vscode-extension-in-online-ide
 subtitle: Join the Beta!
 teaserImage: tools.jpg
 title: Your Favorite VS Code Extension in an Online IDE
+tags: ["Gitpod updates"]
 ---
 
 <script context="module">

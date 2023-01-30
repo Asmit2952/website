@@ -6,6 +6,7 @@ image: teaser.jpg
 slug: bitbucket
 subtitle: Instant dev environments for all Bitbucket projects
 teaserImage: teaser.jpg
+tags: ["Gitpod updates"]
 title: Gitpod for Bitbucket 🚀
 ---
 

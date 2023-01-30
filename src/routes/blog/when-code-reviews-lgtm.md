@@ -7,6 +7,7 @@ slug: when-code-reviews-lgtm
 subtitle: Say goodbye to shallow reviews!
 teaserImage: when-code-reviews-lgtm.jpeg
 title: When code reviews LGTM
+tags: ["Engineering"]
 url: https://hackernoon.com/when-code-reviews-lgtm-say-goodbye-to-shallow-reviews-a4e01b84ddef
 ---
 

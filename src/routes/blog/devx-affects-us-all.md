@@ -7,6 +7,7 @@ slug: devx-affects-us-all
 subtitle:
 teaserImage: header.jpg
 title: DevX Digest 09 - How DevX affects us all
+tags: ["Developer experience"]
 type: digest
 ---
 

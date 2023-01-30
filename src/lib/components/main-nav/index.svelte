@@ -13,12 +13,12 @@
   import SkipToContent from "../skip-to-content.svelte";
   import GithubStars from "./github-stars.svelte";
 
-  import Dropdown from "./dropdown.svelte";
+  import ResourcesDropdown from "./resources-dropdown.svelte";
+  import DocsDropdown from "./docs-dropdown.svelte";
   // import { session } from "$app/stores";
 
   let scroll: number;
 
-  // const isLoggedIn = $session.loggedIn;
   const isLoggedIn =
     typeof document === "undefined"
       ? false
@@ -71,7 +71,7 @@
 <!-- Intersection observer target to trigger the strike through animation. -->
 <div id="choose-project-observer-target-top" />
 <nav
-  class="fixed z-40 mx-auto w-full border-b border-solid border-transparent border-t-0"
+  class="fixed bg-bg z-40 mx-auto w-full border-b border-solid border-transparent border-t-0"
   class:scrolled-out={scroll > 0}
   class:bg-open-state={$menuState}
   aria-label="Main"
@@ -93,12 +93,15 @@
     >
       <NavItem
         navItem={{
-          href: "/docs",
-          label: "Docs",
+          href: "/cde",
+          label: "CDE",
         }}
       />
       <li>
-        <Dropdown />
+        <DocsDropdown />
+      </li>
+      <li>
+        <ResourcesDropdown />
       </li>
       <NavItem
         navItem={{

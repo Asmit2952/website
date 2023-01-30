@@ -6,6 +6,7 @@ image: teaser.jpg
 slug: i-said-goodbye-to-local-development-and-so-can-you
 subtitle:
 teaserImage: teaser.jpg
+tags: ["Engineering"]
 title: I said goodbye to local development and so can you
 ---
 

@@ -40,6 +40,17 @@ module.exports = (plop) => {
               )} to ./src/lib/contents/authors, then press Enter.`;
         },
       },
+      {
+        type: "list",
+        name: "tags",
+        message: "Please select the correspondig tag for the post",
+        choices: [
+          "Company building",
+          "Engineering",
+          "Gitpod updates",
+          "Developer experience",
+        ],
+      },
     ],
     actions: [
       {

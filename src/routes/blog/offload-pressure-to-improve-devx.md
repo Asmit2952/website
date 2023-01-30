@@ -7,6 +7,7 @@ slug: offload-pressure-to-improve-devx
 subtitle:
 teaserImage: teaser.jpg
 title: DevX Digest 06 - Offload pressure to improve DevX
+tags: ["Developer experience"]
 type: digest
 ---
 

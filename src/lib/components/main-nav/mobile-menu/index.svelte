@@ -8,9 +8,13 @@
   import DashboardButton from "../dashboard-button.svelte";
   import menuState from "./state";
   import DemoButton from "../demo-button.svelte";
-  import MobileDropdown from "./mobile-dropdown.svelte";
+  import MobileResourcesDropdown from "./mobile-resources-dropdown.svelte";
+  import MobileDocsDropdown from "./mobile-docs-dropdown.svelte";
 
   export let isLoggedIn: boolean;
+
+  let docsDropdownShown = false;
+  let resourcesDropdownShown = false;
 
   onMount(() => {
     const handleTabletChange = (e: any) => {
@@ -72,32 +76,42 @@
   <div
     class="nav-items absolute flex flex-col py-x-small px-micro md:px-x-small w-screen bg-card z-10 shadow-md max-h-screen overflow-y-auto"
   >
-    <NavItem
-      navItem={{
-        href: "/docs",
-        label: "Docs",
-      }}
-    />
-    <MobileDropdown />
-    <NavItem
-      navItem={{
-        href: "/for/enterprise",
-        label: "Enterprise",
-      }}
-    />
-    <NavItem
-      navItem={{
-        href: "/customers",
-        label: "Customers",
-        highlight: true,
-      }}
-    />
-    <NavItem
-      navItem={{
-        href: "/pricing",
-        label: "Pricing",
-      }}
-    />
+    {#if !docsDropdownShown && !resourcesDropdownShown}
+      <NavItem
+        navItem={{
+          href: "/cde",
+          label: "CDE",
+        }}
+      />
+    {/if}
+    {#if !resourcesDropdownShown}
+      <MobileDocsDropdown bind:shown={docsDropdownShown} />
+    {/if}
+    {#if !docsDropdownShown}
+      <MobileResourcesDropdown bind:shown={resourcesDropdownShown} />
+    {/if}
+
+    {#if !docsDropdownShown && !resourcesDropdownShown}
+      <NavItem
+        navItem={{
+          href: "/for/enterprise",
+          label: "Enterprise",
+        }}
+      />
+      <NavItem
+        navItem={{
+          href: "/customers",
+          label: "Customers",
+          highlight: true,
+        }}
+      />
+      <NavItem
+        navItem={{
+          href: "/pricing",
+          label: "Pricing",
+        }}
+      />
+    {/if}
     <div class="flex flex-col items-center pt-x-small space-y-micro">
       {#if isLoggedIn}
         <DashboardButton />

@@ -3,6 +3,7 @@ author: jeanp413, akosyakov, loujaybee
 date: Friday, 22 July 2022 09:00:00 UTC
 excerpt: Understand how VS Code establishes SSH connections, the different approaches, and understand common gotchas setting up VS Code Desktop and Gitpod via SSH.
 image: header.jpg
+tags: ["Engineering", "Gitpod updates"]
 slug: vscode-desktop-ssh-updates
 subtitle: Establishing SSH Connections, common gotchas and more.
 teaserImage: header.jpg

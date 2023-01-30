@@ -5,6 +5,7 @@ excerpt: To celebrate Open Source and Hacktoberfest, we're stoked 🧙✨🥰 to
 image: frictionless-oss-contributions.png
 slug: frictionless-oss-contributions
 subtitle: Frictionless Open Source Contributions For Everyone
+tags: ["Gitpod updates"]
 title: Announcing contribute.dev — Open Source in One Click
 ---
 

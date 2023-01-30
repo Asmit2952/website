@@ -5,6 +5,7 @@ export type BlogPost = {
   image: string;
   slug?: string;
   href?: string;
+  tags?: string[];
   subtitle?: string;
   teaserImage: string;
   title: string;

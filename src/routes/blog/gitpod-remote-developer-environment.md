@@ -5,6 +5,7 @@ excerpt: After over one year of intensive work, we are proud to announce the pub
 image: gitpod-online-ide.png
 slug: gitpod-remote-developer-environment
 subtitle: One Click to Coding!
+tags: ["Gitpod updates"]
 title: Gitpod - Remote Developer Environment
 url: https://medium.com/gitpod/gitpod-gitpod-online-ide-for-github-6296b907a886
 ---

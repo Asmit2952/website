@@ -5,6 +5,7 @@ excerpt: We are happy to announce that you can finally enjoy Gitpod's frictionle
 image: teaser-gitlab-cover.png
 slug: gitlab-support
 subtitle: Your devops toolchain is finally complete!
+tags: ["Gitpod updates"]
 title: GitLab Support for Gitpod is Here 🎉
 ---
 

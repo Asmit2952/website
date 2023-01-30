@@ -5,6 +5,7 @@ excerpt: By 2023 working with ephemeral cloud-based dev environments will be the
 image: teaser.jpg
 slug: cloud-based-development-for-everyone
 teaserImage: teaser.jpg
+tags: ["Gitpod updates"]
 title: Cloud-based development for everyone
 subtitle:
 ---
